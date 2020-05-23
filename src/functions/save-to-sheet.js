@@ -45,7 +45,8 @@ exports.handler = async (event) => {
         errorMessage: error
       }),
       headers: {
-        'Content-Type': 'text/html'
+        'Content-Type': 'text/html',
+        'Access-Control-Allow-Origin': '*'
       }
     }
   }
@@ -53,8 +54,9 @@ exports.handler = async (event) => {
   return {
     statusCode: 200,
     body: event.body,
-    headers: {
-      'Content-Type': 'text/html'
+    headers: {,
+      'Content-Type': 'text/html',
+      'Access-Control-Allow-Origin': '*'
     }
   }
 }
