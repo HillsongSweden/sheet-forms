@@ -19,7 +19,7 @@ const GOOGLE_AUTH = {
 }
 
 exports.handler = async (event) => {
-  console.log(event.body)
+  console.log(JSON.stringify(event))
   const { rowData, sheetName, sheetId } = JSON.parse(event.body)
 
   try {
