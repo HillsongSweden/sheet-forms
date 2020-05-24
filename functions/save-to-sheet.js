@@ -20,15 +20,15 @@ const GOOGLE_AUTH = {
 
 exports.handler = async (event) => {
   const headers = {
-    'Content-Type': 'text/html',
-    'Access-Control-Allow-Origin': '*'
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
   }
   if (event.httpMethod === 'OPTIONS') {
     return {
       statusCode: 204,
       headers: {
-        Allow: 'POST',
-        ...headers
+        ...headers,
+        'Allow': 'POST'
       }
     }
   }
@@ -68,9 +68,6 @@ exports.handler = async (event) => {
   return {
     statusCode: 200,
     body: event.body,
-    headers: {
-      'Content-Type': 'text/html',
-      'Access-Control-Allow-Origin': '*'
-    }
+    headers
   }
 }
