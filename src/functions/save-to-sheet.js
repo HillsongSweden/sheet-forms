@@ -19,38 +19,37 @@ const GOOGLE_AUTH = {
 }
 
 exports.handler = async (event) => {
-  console.log(event)
-  // const { rowData, sheetName, sheetId } = JSON.parse(event.body)
+  try {
+    const { rowData, sheetName, sheetId } = JSON.parse(event.body)
 
-  // try {
-  //   const doc = new GoogleSpreadsheet(sheetId)
-  //   await doc.useServiceAccountAuth(GOOGLE_AUTH)
+    const doc = new GoogleSpreadsheet(sheetId)
+    await doc.useServiceAccountAuth(GOOGLE_AUTH)
     
-  //   await doc.loadInfo()
+    await doc.loadInfo()
 
-  //   let sheet = doc.sheetsByIndex[0]
-  //   if (sheetName) {
-  //     sheet = doc.sheetsByIndex.find(sheet => {
-  //       return sheet.title === sheetName
-  //     })
-  //   }
+    let sheet = doc.sheetsByIndex[0]
+    if (sheetName) {
+      sheet = doc.sheetsByIndex.find(sheet => {
+        return sheet.title === sheetName
+      })
+    }
     
-  //   await sheet.addRow(rowData)
-  // } catch (error) {
-  //   console.error('SOMETHING IS WRONG!')
-  //   console.error(error)
+    await sheet.addRow(rowData)
+  } catch (error) {
+    console.error('SOMETHING IS WRONG!')
+    console.error(error)
 
-  //   return {
-  //     statusCode: 400,
-  //     body: JSON.stringify({
-  //       errorMessage: error
-  //     }),
-  //     headers: {
-  //       'Content-Type': 'text/html',
-  //       'Access-Control-Allow-Origin': '*'
-  //     }
-  //   }
-  // }
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        errorMessage: error
+      }),
+      headers: {
+        'Content-Type': 'text/html',
+        'Access-Control-Allow-Origin': '*'
+      }
+    }
+  }
 
   return {
     statusCode: 200,
