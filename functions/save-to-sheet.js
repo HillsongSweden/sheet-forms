@@ -19,6 +19,20 @@ const GOOGLE_AUTH = {
 }
 
 exports.handler = async (event) => {
+  const headers = {
+    'Content-Type': 'text/html',
+    'Access-Control-Allow-Origin': '*'
+  }
+  if (event.httpMethod === 'OPTIONS') {
+    return {
+      statusCode: 204,
+      headers: {
+        Allow: 'POST',
+        ...headers
+      }
+    }
+  }
+
   try {
     const { rowData, sheetName, sheetId } = JSON.parse(event.body)
 
@@ -47,10 +61,7 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         errorMessage: error
       }),
-      headers: {
-        'Content-Type': 'text/html',
-        'Access-Control-Allow-Origin': '*'
-      }
+      headers
     }
   }
 
