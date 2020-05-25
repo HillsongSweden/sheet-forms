@@ -2,12 +2,16 @@
 
 För att det ska fungera krävs tre saker:
 1. Formuläret _ska_ ha ett id som matchar det spreadsheet som ska skrivas till
+![Must have matching ID](images/form%20id.png)
 2. Spreadsheetet måste delas med `hillsong-forms-version-3@proven-aura-275720.iam.gserviceaccount.com` (edit krävs)
+![Must share spreadsheet](images/share.png)
 3. Spreadsheetet måste ha headers som matchar name-attribut i formuläret
+![Must match name attribute](images/name%20attribute.png)
 
 ----------------
 
-Kort om de olika attributen på elementen:
+### Kort om de olika attributen på elementen:
+
 `name` är **superviktigt**, name _måste_ stämma överens med en kolumn i ditt spreadsheet.
 
 `id` - om en label har `for`-attributet så kommer klick på labeln markera motsvarande id.
