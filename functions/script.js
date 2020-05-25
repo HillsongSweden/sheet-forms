@@ -24,7 +24,7 @@ $(document).ready(function () {
             ? sendingText + '.'
             : 'Skickar '
         );
-    }, 500)
+    }, 500);
 
     $.ajax({
       url: 'https://sheets-forms.netlify.app/.netlify/functions/save-to-sheet',
