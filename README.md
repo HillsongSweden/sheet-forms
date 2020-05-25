@@ -12,10 +12,28 @@ För att det ska fungera krävs tre saker:
 
 ### Kort om de olika attributen på elementen:
 
-`name` är **superviktigt**, name _måste_ stämma överens med en kolumn i ditt spreadsheet.
+`name` måste finnas, name _måste_ stämma överens med en kolumn i ditt spreadsheet.
+
+`value` är det värde som kommer hamna i spreadsheetet. Framförallt för radioknappar, checkboxar och dropdowns. Går också att använda för att förifylla inputs.
 
 `id` - om en label har `for`-attributet så kommer klick på labeln markera motsvarande id.
 Mkt användbart för radioknappar och checkboxar då de kan vara svåra att träffa med musen.
+
+`type` gäller endast input-taggen Användbara typer är `text, number, submit och email`, number får endast innehålla siffror, email måste ha giltigt email-format. Submit är den knapp som skickar iväg formuläret.
+
+`placeholder` gäller endast input och textarea-taggen, den är grå text som syns i ett tomt inputfält, kan användas för att ge användaren ett hum om hur texten ska formatteras.
+
+`required`, om required finns på ett formulärelement så måste något vara ifyllt för att man ska kunna skicka formuläret.
+
+`maxlength och minlength` endast textarea– och inputelement, en siffra som bestämmer hur lång eller kort inputen får vara.
+
+`rows columns` - endast textarea. Hur många rader hög eller bred textboxen ska vara (oftast bäst att skippa columns).
+
+`selected` endast för dropdownens optiontagg. För att förhandsmarkera ett värde.
+
+`checked` endast radioknappar och checkboxar, också för att förhandmarkera.
+
+`disabled` inaktivt formulärelement.
 
 ----------------
 
@@ -46,7 +64,7 @@ Långt textsvar (text med flera rader):
 ```html
 <div>
   <label for="long_text">This can be a long text with line breaks!</label>
-  <textarea id="long_text" name="long_text" placeholder="This is the textarea placeholder text" rows="5" required></textarea>
+  <textarea id="long_text" name="long_text" placeholder="This is the textarea placeholder text" rows="5" maxlength="160" required></textarea>
 </div>
 ```
 
