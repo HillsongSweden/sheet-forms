@@ -2,17 +2,17 @@
 
 För att det ska fungera krävs tre saker:
 1. Formuläret _ska_ ha ett id som matchar det spreadsheet som ska skrivas till
-![Must have matching ID](images/form%20id.png)
+![Must have matching ID](images/formid.png)
 2. Spreadsheetet måste delas med `hillsong-forms-version-3@proven-aura-275720.iam.gserviceaccount.com` (edit krävs)
 ![Must share spreadsheet](images/share.png)
 3. Spreadsheetet måste ha headers som matchar name-attribut i formuläret
-![Must match name attribute](images/name%20attribute.png)
+![Must match name attribute](images/nameattribute.png)
 
 ----------------
 
 ### Kort om de olika attributen på elementen:
 
-`name` måste finnas, name _måste_ stämma överens med en kolumn i ditt spreadsheet.
+`name` måste finnas, name _måste_ stämma överens med en kolumn i ditt spreadsheet. Det finns alltid ett name som heter `created_at`, den behöver inte finnas i formuläret utan räcker om den finns i spreadsheetet.
 
 `value` är det värde som kommer hamna i spreadsheetet. Framförallt för radioknappar, checkboxar och dropdowns. Går också att använda för att förifylla inputs.
 
