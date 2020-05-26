@@ -1,7 +1,3 @@
-exports.handler = async (event) => {
-  return {
-    statusCode: 200,
-    body: `
 $(document).ready(function () {
   var $form = $('.hillsong-form')
   var $submitBtn = $form.find('input[type=submit]');
@@ -58,10 +54,3 @@ $(document).ready(function () {
     });
   });
 });
-    `,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'text/javascript; charset=UTF-8'
-    }
-  }
-}

@@ -1,6 +1,7 @@
 [build]
   functions = "./functions"
   command = "npm i"
+  publish = "public"
 
 [[headers]]
   # Define which paths this specific [[headers]] block will cover.
