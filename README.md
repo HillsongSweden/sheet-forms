@@ -47,7 +47,7 @@ Ett minimalt formulär:
 
   <input type="submit" value="Skicka">
 </form>
-<script>var el = document.createElement('script'); el.src = 'https://sheets-forms.netlify.app/.netlify/functions/script'; document.body.append(el);</script>
+<script>var el = document.createElement('script'); el.src = 'https://sheets-forms.netlify.app/script.js'; document.body.append(el);</script>
 ```
 
 ## Olika formulärelement
@@ -150,5 +150,5 @@ Fullt exempel:
 
   <input type="submit" value="Skicka">
 </form>
-<script>var el = document.createElement('script'); el.src= 'https://sheets-forms.netlify.app/.netlify/functions/script'; document.body.append(el);</script>
+<script>var el = document.createElement('script'); el.src= 'https://sheets-forms.netlify.app/script.js'; document.body.append(el);</script>
 ```
